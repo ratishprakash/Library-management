@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="/sample.css">
+        <script type="text/javascript" src="login_check.js"></script>
+    </head>
+        <body>
+            <h1 class="apple"><center>College Library</center></h1>
+            <div class="login"><div class="login2">
+            <h2 class="login_heading"><center>Student Login Details</center></h2>
+            <form >
+                <center><label for="reg"  class="login_heading" >Register Number: </label><br>
+                        <!-- <p id="login_heading">Sample</p> -->
+                        <input type="text" id="reg"><br></label>
+                        <label for="pass" class="login_heading">Password: </label><br>
+                        <input type="text" id="pass"><br>
+                <input type="button" value="Login" onclick="check()"><br>
+                </center>
+                <a th:href="@{/login}">Login</a>
+                <a th:href="@{/register}" style="display:inline"class="new_user" target="_blank">New user?</p>  
+                </form></div></div>
+            </form>
+
+        </body>
+
+</html>

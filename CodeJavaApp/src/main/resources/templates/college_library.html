@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Library</title>
+    <link rel="stylesheet" type="text/css" href="/college_library.css">
+    <link rel="stylesheet" type="text/css" href="/navbar.css">
+    <script type="text/javascript" src="/sample.js"> 
+    </script>
+    <script type="text/javascript" src="/sample2.js"></script>
+    <script type="text/javascript" src="login_check.js"></script>
+
+  </head>
+  <body>
+    <ul class="nav_ul">
+      <li class="nav_li">Home</li>
+      <li class="nav_li"><a href="/dictionary_api.html" class="nav_a">Book search</a></li>
+    </ul>
+    <center>
+    <h1 class="main_heading"><ins>Library Management<ins></h1>
+    </center>
+      <h2 class="heading">Books available</h2>
+      
+      
+      <h3 class="sub_heading">Theory of computation</h3>
+      <img src="https://5.imimg.com/data5/SC/UV/MY-37365123/theory-of-computation-500x500.jpg" alt="Test image"/><br> 
+      <p>
+        <span class="p_h"> Type: </span><span class="p">Reference Book<br>
+        <span class="p_h">Pages: </span>539<br>
+        <span class="p_h">availability: </span> 5</span>
+      </p>
+      <a href="https://learnengineering.in/cs8501-theory-of-computation/" target="_blank">
+        <input type="submit" value="More" class="buttons">
+          
+        </a>
+    <form >
+<!--           <input type="submit" value="More" ><br> -->
+          <input type="checkbox" name="Theory of computation" id="chktick" onclick="sayhello()"> 
+          <label for="chktick" class="add_to_cart">Add to cart</label>
+      </form>
+      
+      
+      <h3 class="sub_heading">Artificial Intelligence</h3>
+      <img src="https://images-na.ssl-images-amazon.com/images/I/818V2kAsusL.jpg" alt="sample img" height="50%" width="27%/>"<br>
+    <p>
+      <span class="p_h">Type:</span><span class="p"> Reference Book<br>
+      <span class="p_h">Pages:</span> 450<br>
+      <span class="p_h">availability:</span> 10</span><br>
+      </p>
+      <a href="https://www.amazon.in/Artificial-Intelligence-VI-Semester-University-Engineering/dp/B084B1H8XV/ref=pd_lpo_1?pd_rd_i=a&psc=1"target="_blank">
+        <input type="submit" value="More" class="buttons">
+          
+        </a>
+        <form>
+          <input type="checkbox" name="Artificial Intelliegence" id="chktick1" onclick="sayhello1()">
+          <label for="chktick1" class="add_to_cart">Add to cart</label>
+      </form>
+      
+      
+      <h3 class="sub_heading">Data Warehousing and Data Mining</h3>
+      <img src="https://m.media-amazon.com/images/I/51NMdcMktBL.jpg" alt="Test image"/><br> 
+      <p>
+        <span class="p_h"> Type:</span><span class="p"> Reference Book<br>
+        <span class="p_h">Pages: </span>670<br>
+        <span class="p_h">
+          availability:</span> 2</span>
+      </p>
+      <a href="https://www.amazon.in/Data-Warehousing-Mining-University-CS8075-ebook/dp/B088644Q1Y" target="_blank">
+        <input type="submit" value="More" class="buttons">
+          
+        </a>
+    <form >
+<!--           <input type="submit" value="More" ><br> -->
+          <input type="checkbox" name="Data Warehousing and Data Mining" id="chktick2" onclick="sayhello2()"/>
+          <label for="chktick2" class="add_to_cart">Add to cart</label><br>
+          <label for="total"></label>
+          <input type="button" id="total" onclick="location1()"value="Checkout" class="checkout_button"/>
+      </form>
+      <ul id="list" class="lists">
+        
+      </ul>
