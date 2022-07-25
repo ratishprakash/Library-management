@@ -1,18 +1,28 @@
 var uni_count=0
+var temp_count=0
+function remove(){
+    var ul=document.getElementById("cards")
+    while(ul.hasChildNodes()){
+        ul.removeChild(ul.firstChild);
+    }
+}   
+
 async function get_meaning(query){
 const api_url="https://www.googleapis.com/books/v1/volumes?q="+query+"&printType=books"
 const response = await fetch(api_url)
 const myJson= await response.json()
-// console.log(myJson.items[9])
+// console.log(myJson.items[0])
 console.log(myJson.items[5].volumeInfo)
+temp_count+=1
+// console.log(temp_count)
 
 for(var i=0;i<10;i++){
 
     const div1=document.createElement("div")
     div1.setAttribute("id","div1"+i)
     div1.className="col-md-4 mt-2"
-    // document.getElementById("cards").appendChild(div1)
-    document.body.appendChild(div1)
+    document.getElementById("cards").appendChild(div1)
+    // document.body.appendChild(div1)
 
     const div2=document.createElement("div")
     div2.setAttribute("id","div2"+i)
@@ -36,16 +46,58 @@ for(var i=0;i<10;i++){
         document.getElementById("div4"+i).appendChild(img1)
     }
     catch(err){
-        img1.setAttribute("alt","No Image Found")
+        img1.setAttribute("src","https://islandpress.org/sites/default/files/default_book_cover_2015.jpg")
+        img1.setAttribute("height","225")
+        img1.setAttribute("width","150")
         document.getElementById("div4"+i).appendChild(img1)
-
     }
+    const div5=document.createElement("div")
+    div5.className="card-body bg-light text-center"
+    div5.setAttribute("id","div5"+i)
+    document.getElementById("div2"+i).appendChild(div5)
+
+    const div6=document.createElement("div")
+    div6.className="mb-2"
+    div6.setAttribute("id","div6"+i)
+    document.getElementById("div5"+i).appendChild(div6)
+
+    const h_1=document.createElement("h6")
+    h_1.className="font-weight-semibold mb-2"
+    h_1.setAttribute("id","h_1"+i)
+    document.getElementById("div6"+i).appendChild(h_1)
+
+    const a1=document.createElement("a")
+    var title=myJson.items[i].volumeInfo.title
+    var book_link=myJson.items[i].volumeInfo.canonicalVolumeLink
+    // console.log(myJson.items[i].volumeInfo)
+    a1.className="text-default mb-2"
+    a1.setAttribute("href",book_link)
+    a1.setAttribute("target","_blank")
+    a1.setAttribute("data-abc","true")
+    a1.setAttribute("id","a1"+i)
+    document.getElementById("h_1"+i).appendChild(a1)
+    document.getElementById("a1"+i).textContent=title
+
+    const p1=document.createElement("p")
+    p1.className="text-muted"
+    p1.setAttribute("data-abc","true")
+    p1.setAttribute("id","p1"+i)
+    document.getElementById("div6"+i).appendChild(p1)
+    var author=myJson.items[i].volumeInfo.authors
+    document.getElementById.
+
+
     uni_count+=1 
-        }}
+        }
+    }
     
 
 function getname(){
     const query=textbox.value
+    if(temp_count>=1){
+        remove()
+    }
+
     get_meaning(query).catch(error =>{
         console.log("error")
         console.error(error)
