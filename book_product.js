@@ -8,7 +8,7 @@ function remove(){
 }   
 
 async function get_meaning(query){
-const api_url="https://www.googleapis.com/books/v1/volumes?q="+query+"&printType=books"
+const api_url="https://www.googleapis.com/books/v1/volumes?q="+query+"&printType=books&maxResults=12"
 const response = await fetch(api_url)
 const myJson= await response.json()
 // console.log(myJson.items[0])
@@ -16,7 +16,7 @@ console.log(myJson.items[5].volumeInfo)
 temp_count+=1
 // console.log(temp_count)
 
-for(var i=0;i<10;i++){
+for(var i=0;i<12;i++){
 
     const div1=document.createElement("div")
     div1.setAttribute("id","div1"+i)
@@ -84,8 +84,14 @@ for(var i=0;i<10;i++){
     p1.setAttribute("id","p1"+i)
     document.getElementById("div6"+i).appendChild(p1)
     var author=myJson.items[i].volumeInfo.authors
-    document.getElementById.
+    document.getElementById("p1"+i).textContent=author
 
+    var review=myJson.items[i].volumeInfo.averageRating
+    const div7=document.createElement("div")
+    div7.className="text-muted mb-3"
+    div7.setAttribute("id","div7"+i)
+    document.getElementById("div5"+i).appendChild(div7)
+    document.getElementById("div7"+i).textContent="Rating = "+review
 
     uni_count+=1 
         }
